@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+//VARIABLES
+
+$color1:#000000;
+$color2:#FFFFFF;
+$color3:#ff631a;
+$font:'Chakra Petch', sans-serif;
+
+body{
+    background-image: url(../img/layered-peaks-haikei\ \(1\).svg);
+    background-repeat: no-repeat;  
+    background-position: 0% 0%;
+    background-size: cover;
+    
+    
+}
+.container{
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section{  
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 68vh;
+}
+.inputBox{
+    position: relative;
+    width: 55%;
+
+    input{
+        width: 100%;
+        padding: 15px;
+        border-radius: 13px;
+        border: solid 2px $color1;
+        outline: none;
+        color: $color1;
+        font-size: 1em;
+        background: $color2;
+        transition: 0.5s;
+
+    }
+    input:valid ,input:focus {
+        border: solid 3px $color3;
+    }
+    span{
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 19px;
+        pointer-events: none;
+        font-size: 1rem;
+        color: #868686;
+        text-transform: uppercase;
+        transition: 0.5s;
+        
+    }
+    
+    input:valid ~ span,input:focus ~ span{
+        font-size: 1em;
+        padding: 0 35px;
+        color:$color3;
+        // transform: translateX(20px) translateY(-20);
+        background: $color3;
+        color: $color2;
+        letter-spacing: 0.2em;
+        border-radius: 0 0 36px;
+        width: auto;
+
+        
+    }
+}
+    .button{
+    font-family: $font;
+    appearance: none;
+    cursor: pointer;
+    padding: 9px 30px;
+    border-radius: 10px;
+    color: $color2;
+    font-size: 30px;
+    font-weight: 600;
+    transition: 0.5s;
+    text-decoration: none;
+
+}
+.button-1{
+    color:$color3;
+    border: 1px solid $color3;
+}
+.button-1:hover{
+    color: $color2;
+    background-color:$color3;
+}
+}
+
+
+//! logo Text 
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Rubik Vinyl', cursive;
+    margin: 0;
+    font-size: 8em;
+    padding: 0;
+    color: rgb(254, 144, 26);
+    span {
+    transform: scale(0.9);
+    display: inline-block;
+    }
+    span:first-child {
+    animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite
+        alternate;
+    }
+    span:last-child {
+    animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+        infinite alternate;
+    }
+  }
+  
+  @keyframes bop {
+    0% {
+      transform: scale(0.9);
+    }
+    50%,
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bopB {
+    0% {
+      transform: scale(0.9);
+    }
+    80%,
+    100% {
+      transform: scale(1) rotateZ(-3deg);
+    }
+  }
