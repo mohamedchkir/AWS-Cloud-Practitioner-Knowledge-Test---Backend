@@ -3,6 +3,7 @@ fetch("http://localhost:3000/quiz/1")
   .then((data) => data.json())
   .then((data) => {
     DATA = data;
+    console.log(DATA);
   })
 
 var time = 0;
@@ -13,6 +14,8 @@ const next_btn = document.getElementById("next")
 const miniteur = document.querySelector(".seconds")
 const questi = document.querySelector(".count")
 const lets = document.getElementById("lets")
+const r = document.querySelector(':root');
+const BTN_PLAY = document.querySelector('#btn-play');
 
 //! submit
 next_btn.addEventListener("click", function (e) {
@@ -77,8 +80,6 @@ function afficher_question(question) {
 }
 
 // a condition switch div class name in none 
-const r = document.querySelector(':root');
-const BTN_PLAY = document.querySelector('#btn-play');
 
 BTN_PLAY.onclick = () => {
   r.style.setProperty('--width-stepper', '50%');
@@ -105,6 +106,7 @@ function check() {
   list.push(obj)
   console.log(list);
 }
+
 let score = 0;
 function checkAnswers() {
   let result = document.querySelector('.result');
