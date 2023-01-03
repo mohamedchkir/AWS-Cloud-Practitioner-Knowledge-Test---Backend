@@ -3,51 +3,52 @@ require_once 'db.php';
 
 class Questions extends Database
 {
-
-    public function getAllQuestions()
+    public function getQuestions()
     {
         try {
+            $sql = "SELECT `id`, `correct`, `comment` FROM `answer`";
+            $a_stmt = $this->connection()->prepare($sql);
+
+            $sql = "SELECT `question-id`, `id`, `content` FROM `options`";
+            $o_stmt = $this->connection()->prepare($sql);
+
             $sql = "SELECT * FROM `questions`";
             $stmt = $this->connection()->prepare($sql);
 
             if ($stmt->execute()) {
-                return json_encode($stmt->fetchAll(), JSON_PRETTY_PRINT);
-            } else {
-                return false;
-            }
-        } catch (PDOException $e) {
-            echo "ERROR: Could not prepare/execute query: $sql. " . $e->getMessage();
-            return false;
-        }
-    }
 
-    public function getQuestion()
-    {
-        try {
-            $sql = "SELECT `right-option-id` FROM `answers` WHERE `question-id` = $this->id";
-            $a_stmt = $this->connection()->prepare($sql);
+                $obj = new stdClass;
+                $obj->title = "AWS - Quiz";
+                $obj->description = "AWS Certified Cloud Practitioner (CLF-C01) Sample Exam Questions";
+                // $obj = (object)$stmt->fetch();
 
-            $sql = "SELECT `id`, `option` FROM `options` WHERE `question-id` = $this->id";
-            $o_stmt = $this->connection()->prepare($sql);
+                $questions_array = [];
 
-            $sql = "SELECT * FROM `questions` WHERE id = $this->id";
-            $stmt = $this->connection()->prepare($sql);
 
-            if ($stmt->execute() && $a_stmt->execute() && $o_stmt->execute()) {
-                $obj = (object)$stmt->fetch();
-
-                $options_array = [];
-                $answers_array = [];
-
-                while ($option = $o_stmt->fetch()) {
-                    $options_array[] = (object)$option;
-                }
-                while ($answer = $a_stmt->fetch()) {
-                    $answers_array[] = $answer['right-option-id'];
+                while ($question = $stmt->fetch()) {
+                    $options_array = [];
+                    // $answers_array = [];
+                    $o_stmt->execute();
+                    $a_stmt->execute();
+                    while ($option = $o_stmt->fetch()) {
+                        if ($option['question-id'] == $question['id']) {
+                            $options_array[] = (object)$option;
+                        }
+                    }
+                    while ($answer = $a_stmt->fetch()) {
+                        if ($answer['id'] == $question['id']) {
+                            $answers_array[] = (object)$answer;
+                        }
+                    }
+                    $Q = (object)$question;
+                    $Q->options = $options_array;
+                    $Q->answer = $answers_array;
+                    $questions_array[] = $Q;
                 }
 
-                $obj->options = $options_array;
-                $obj->answers = $answers_array;
+
+
+                $obj->questions = $questions_array;
                 return json_encode($obj, JSON_PRETTY_PRINT);
             } else {
                 return false;
