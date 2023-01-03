@@ -21,13 +21,11 @@ class Questions extends Database
                 $obj->title = "AWS - Quiz";
                 $obj->description = "AWS Certified Cloud Practitioner (CLF-C01) Sample Exam Questions";
                 // $obj = (object)$stmt->fetch();
-
                 $questions_array = [];
-
-
                 while ($question = $stmt->fetch()) {
+                    $Q = (object)$question;
                     $options_array = [];
-                    // $answers_array = [];
+                    $answers_array = [];
                     $o_stmt->execute();
                     $a_stmt->execute();
                     while ($option = $o_stmt->fetch()) {
@@ -37,17 +35,12 @@ class Questions extends Database
                     }
                     while ($answer = $a_stmt->fetch()) {
                         if ($answer['id'] == $question['id']) {
-                            $answers_array[] = (object)$answer;
+                            $Q->answer = (object)$answer;
                         }
                     }
-                    $Q = (object)$question;
                     $Q->options = $options_array;
-                    $Q->answer = $answers_array;
                     $questions_array[] = $Q;
                 }
-
-
-
                 $obj->questions = $questions_array;
                 return json_encode($obj, JSON_PRETTY_PRINT);
             } else {

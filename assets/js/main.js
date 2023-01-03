@@ -1,5 +1,5 @@
 let DATA;
-fetch("http://localhost:3000/quiz/1")
+fetch("http://localhost/AWS-Cloud-Practitioner-Knowledge-Test---Backend/php/script.php")
   .then((data) => data.json())
   .then((data) => {
     DATA = data;
@@ -26,7 +26,7 @@ next_btn.addEventListener("click", function (e) {
 
 //todo timer 
 function timer() {
-  let seconds = 5;
+  let seconds = 30;
   if (seconds > 0) {
     interval = setInterval(() => {
       console.log(seconds);
@@ -113,14 +113,14 @@ function checkAnswers() {
   result.innerHTML = '';
   for (let i = 0; i < DATA.questions.length; i++) { // lister les question 
     let className = '';
-    if (DATA.questions[i].answer.correct == list[i].id_checked) {
+    if (DATA.questions[i].answer['correct'] == list[i].id_checked) {
       className = 'sucess';
     } else {
       className = 'wrong'
     }
     result.innerHTML += `<div id="question">
     <div class="question">
-    <p class='noAnswer'> Question: !</p>
+    <p class='noAnswer'> Question: </p>
     ${(list[i].id_checked == 999) ? "<p class='noAnswer'> No Answer !!! <br> </p>" : ''}
     </div>
     <div class="quiz-area">
