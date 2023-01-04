@@ -20,14 +20,14 @@
       </div>
       <div class="button-container">
         <div class="inputBox">
-          <input id="username" type="text" required="required" />
-          <span>Your Username</span>
+          <form name="myForm" action="index1.php" onsubmit="return validateForm()">
+            <input id="username" type="text" required="required" name="fname" />
+            <span>Your Username</span>
         </div>
         <div class="button_start">
-          <form action="index1.php">
-            <button id="lets" class="button button-1" onclick="getname()">Let's Start</button>
-          </form>
+          <button id="lets" class="button button-1" onclick="getname()">Let's Start</button>
         </div>
+        </form>
       </div>
     </section>
   </div>

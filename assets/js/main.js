@@ -18,13 +18,14 @@ const r = document.querySelector(':root');
 const BTN_PLAY = document.querySelector('#btn-play');
 
 //! submit
+
 next_btn.addEventListener("click", function (e) {
   check()
   clearInterval(interval);
   afficher_question(DATA.questions[index]);
 })
 
-//todo timer 
+//! timer 
 function timer() {
   let seconds = 30;
   if (seconds > 0) {
@@ -67,7 +68,7 @@ function afficher_question(question) {
             </div>
             <div class="answer">
               <input type="radio" id="answer-3" name="questions" value="${question.options[2].content}"/>
-              <label for="answer-3">A${question.options[2].content}</label>
+              <label for="answer-3">${question.options[2].content}</label>
             </div>
             <div class="answer">
               <input type="radio" id="answer-4" name="questions" value="${question.options[3].content}"/>
@@ -79,7 +80,7 @@ function afficher_question(question) {
   index++;
 }
 
-// a condition switch div class name in none 
+//! a condition switch div class name in none 
 
 BTN_PLAY.onclick = () => {
   r.style.setProperty('--width-stepper', '50%');
@@ -111,7 +112,7 @@ let score = 0;
 function checkAnswers() {
   let result = document.querySelector('.result');
   result.innerHTML = '';
-  for (let i = 0; i < DATA.questions.length; i++) { // lister les question 
+  for (let i = 0; i < DATA.questions.length; i++) {                                     //* lister les question 
     let className = '';
     if (DATA.questions[i].answer['correct'] == list[i].id_checked) {
       className = 'sucess';
@@ -121,7 +122,7 @@ function checkAnswers() {
     result.innerHTML += `<div id="question">
     <div class="question">
     <p class='noAnswer'> Question: </p>
-    ${(list[i].id_checked == 999) ? "<p class='noAnswer'> No Answer !!! <br> </p>" : ''}
+    ${(list[i].id_checked == 999) ? "<p class='noAnswers'> No Answer !!! <br> </p>" : ''}
     </div>
     <div class="quiz-area">
       <h2>${DATA.questions[i]['content']}</h2>
@@ -145,7 +146,7 @@ function checkAnswers() {
   }
 }
 
-// * LA FIN DE QUIZ
+//! LA FIN DE QUIZ
 function endQuiz() {
   check();
   r.style.setProperty('--width-stepper', '100%');
@@ -155,12 +156,20 @@ function endQuiz() {
   checkAnswers();
 }
 
-// ! USERNAME 
+//! USERNAME 
 function getname() {
   sessionStorage.setItem("user", document.getElementById("username").value);
 }
 let name = sessionStorage.getItem("user");
 document.getElementById("username").innerText = `Hello ` + name;
 
+//!  redirection to other page 
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
 
 

@@ -73,7 +73,7 @@
   <div class="result none">
     <div id="question">
       <div class="quiz-area">
-        <h2>hfzfsz</h2>
+        <h2></h2>
       </div>
       <div class="answers-area">
         <div class="answer true">

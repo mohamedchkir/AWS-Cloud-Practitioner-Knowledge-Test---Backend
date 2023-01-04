@@ -1,7 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
 
-//VARIABLES
+//! --------------------------->VARIABLES<-------------------------------
 
 $color1:#000000;
 $color2:#FFFFFF;
@@ -14,12 +13,12 @@ $font1:'Chakra Petch', sans-serif;
 $font2:'Quantico', sans-serif;
 $list-stepper:"Guide", "Questions", "Result";
 
-//MIXINS
+//! --------------------------->MIXINS<-------------------------------
 @mixin div-design{
     background-color: $color4;
     border-radius: 10px;
     padding: 10px;
-    max-width: 50%;
+    max-width: 70%;
     margin: auto;
   }
 
@@ -42,16 +41,12 @@ body{
 }
 
 #question{
-  
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-      
     h2{
       justify-content: center;
         color: $color1;
-        // font-size: large;
         font-family: $font2;
     }
     .result-option{
@@ -143,7 +138,9 @@ button:hover:before, button:hover:after{
 .result{
   @include div-design();
   background-color: $color4;
-  max-width: 90%;
+  max-width: 70%;
+  overflow-y: scroll;
+  height: 600px;
 }
 
 #guide{
@@ -183,7 +180,7 @@ max-width: 80%;
     }
 }
 
-//STEPPER
+//! --------------------------->STEPPER<-------------------------------
 :root {
     --width-stepper: 0%;
   }
@@ -238,17 +235,24 @@ max-width: 80%;
     }
   }
 
-//   CACHER LES DIVS
+//! --------------------------->HIDE DIVS<-------------------------------
   .none{
     display: none;
   }
 
-  //* RESULTS PART STYLLING
+ //! --------------------------->RESULT STYLING<-------------------------------
   .answer.sucess {
     background-color: #5bbc7f !important;
+    p{
+      color: $color2 !important;
+      }
 }
 .answer.wrong{
   background-color: #f04e4e !important;
+  p{
+    
+    color: $color2 !important;
+  }
 }
   .false{
     background-color: $false !important;
@@ -256,3 +260,35 @@ max-width: 80%;
       color: $color2 !important;
     }
   }
+  
+  .question{
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+    background-color: $color2;
+    border-radius: 10px;
+      .noAnswer{
+          font-family: $font2;
+          font-size: larger;
+          color: $color3;
+      }
+      .noAnswers{
+        font-family: $font2;
+        font-size: larger;
+        color: $color1;
+  
+      }
+  }
+  //! --------------------------->QUESTIONS SELECTED <-------------------------------
+.answer > input[type="radio"] {
+    opacity: 0 !important;
+    position: fixed !important;
+    width: 0 !important;
+  }
+.answer input[type="radio"]:focus + label {
+    border: 2px dashed #444 !important;
+}
+.answer input[type="radio"]:checked + label {
+  background-color:#bfb !important;
+  border-color: #4c4 !important;
+}

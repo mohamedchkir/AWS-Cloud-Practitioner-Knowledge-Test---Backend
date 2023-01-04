@@ -108,17 +108,19 @@ button:hover:before, button:hover:after {
   background-color: rgba(255, 255, 255, 0.9411764706);
   border-radius: 10px;
   padding: 10px;
-  max-width: 50%;
+  max-width: 70%;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.9411764706);
-  max-width: 90%;
+  max-width: 70%;
+  overflow-y: scroll;
+  height: 600px;
 }
 
 #guide {
   background-color: rgba(255, 255, 255, 0.9411764706);
   border-radius: 10px;
   padding: 10px;
-  max-width: 50%;
+  max-width: 70%;
   margin: auto;
   padding: 25px;
   max-width: 80%;
@@ -143,7 +145,7 @@ button:hover:before, button:hover:after {
   background-color: rgba(255, 255, 255, 0.9411764706);
   border-radius: 10px;
   padding: 10px;
-  max-width: 50%;
+  max-width: 70%;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.9411764706);
 }
@@ -250,9 +252,15 @@ button:hover:before, button:hover:after {
 .answer.sucess {
   background-color: #5bbc7f !important;
 }
+.answer.sucess p {
+  color: #FFFFFF !important;
+}
 
 .answer.wrong {
   background-color: #f04e4e !important;
+}
+.answer.wrong p {
+  color: #FFFFFF !important;
 }
 
 .false {
@@ -260,4 +268,37 @@ button:hover:before, button:hover:after {
 }
 .false p {
   color: #FFFFFF !important;
+}
+
+.question {
+  display: flex;
+  padding: 1%;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.question .noAnswer {
+  font-family: "Quantico", sans-serif;
+  font-size: larger;
+  color: #ff631a;
+}
+.question .noAnswers {
+  font-family: "Quantico", sans-serif;
+  font-size: larger;
+  color: #000000;
+}
+
+.answer > input[type=radio] {
+  opacity: 0 !important;
+  position: fixed !important;
+  width: 0 !important;
+}
+
+.answer input[type=radio]:focus + label {
+  border: 2px dashed #444 !important;
+}
+
+.answer input[type=radio]:checked + label {
+  background-color: #bfb !important;
+  border-color: #4c4 !important;
 }/*# sourceMappingURL=style1.css.map */
