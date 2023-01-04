@@ -23,7 +23,6 @@ class Questions extends Database
                 while ($question = $stmt->fetch()) {
                     $Q = (object)$question;
                     $options_array = [];
-                    $answers_array = [];
                     $o_stmt->execute();
                     $a_stmt->execute();
                     while ($option = $o_stmt->fetch()) {

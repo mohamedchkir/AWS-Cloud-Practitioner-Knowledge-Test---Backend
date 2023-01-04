@@ -121,7 +121,7 @@ function checkAnswers() {
     }
     result.innerHTML += `<div id="question">
     <div class="question">
-    <p class='noAnswer'> Question: </p>
+    <p class='noAnswer'> Question: ${i + 1}</p>
     ${(list[i].id_checked == 999) ? "<p class='noAnswers'> No Answer !!! <br> </p>" : ''}
     </div>
     <div class="quiz-area">

@@ -51,6 +51,7 @@ body{
         color: $color3;
     }
     h4,label{
+        cursor: pointer;
         font-family: $font1;
         color: $color3;
         padding: 20px;
@@ -75,7 +76,8 @@ body{
     gap: 3%;
 }
 .next{
-  
+  margin: auto;
+  margin-top: 2%;
   max-width: 75px;
   padding: 8px;
   font-family: $font2;
@@ -89,10 +91,7 @@ body{
   display: flex;
   justify-content: end;
 }
-.next:hover{
-  background-color: $color3;
-  color: $color2;
-}
+
   
 button{
   border: 0;
@@ -262,7 +261,7 @@ max-width: 80%;
       .noAnswer{
           font-family: $font2;
           font-size: larger;
-          color: $color3;
+          color: $color2;
       }
       .noAnswers{
         font-family: "Quantico", sans-serif;

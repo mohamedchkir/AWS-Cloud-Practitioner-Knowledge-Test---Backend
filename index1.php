@@ -28,7 +28,9 @@
       </div>
 
       <div id="boutton">
-        <button id="btn-exit" class="button button-1"><strong>Exit</strong></button>
+        <a href="main.php">
+          <button id="btn-exit" class="button button-1"><strong>Exit</strong></button>
+        </a>
         <button id="btn-play" class="button button-1"><strong>Play</strong></button>
       </div>
     </div>
