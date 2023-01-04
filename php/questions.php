@@ -16,7 +16,6 @@ class Questions extends Database
             $stmt = $this->connection()->prepare($sql);
 
             if ($stmt->execute()) {
-
                 $obj = new stdClass;
                 $obj->title = "AWS - Quiz";
                 $obj->description = "AWS Certified Cloud Practitioner (CLF-C01) Sample Exam Questions";

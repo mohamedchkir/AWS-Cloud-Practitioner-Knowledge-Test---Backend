@@ -273,11 +273,17 @@ max-width: 80%;
           color: $color3;
       }
       .noAnswers{
-        font-family: $font2;
+        font-family: "Quantico", sans-serif;
         font-size: larger;
-        color: $color1;
-  
+        color: #000000;
+        font-variant-caps: all-small-caps;
       }
+  }
+  .Descriptions{
+    background-color: #c0b8f9;
+    border-radius: 10px;
+    padding: 1%;
+    font-family: monospace;
   }
   //! --------------------------->QUESTIONS SELECTED <-------------------------------
 .answer > input[type="radio"] {

@@ -286,6 +286,14 @@ button:hover:before, button:hover:after {
   font-family: "Quantico", sans-serif;
   font-size: larger;
   color: #000000;
+  font-variant-caps: all-small-caps;
+}
+
+.Descriptions {
+  background-color: #c0b8f9;
+  border-radius: 10px;
+  padding: 1%;
+  font-family: monospace;
 }
 
 .answer > input[type=radio] {
