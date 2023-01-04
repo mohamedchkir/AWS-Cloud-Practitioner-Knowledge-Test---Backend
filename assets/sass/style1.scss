@@ -7,8 +7,8 @@ $color2:#FFFFFF;
 $color3:#ff631a;
 $color4:#fffffff0;
 $color5:#cfcfcff0;
-$true:#059300;
-$false:#d30707;
+$true:#5bbc7f;
+$false:#f04e4e;
 $font1:'Chakra Petch', sans-serif;
 $font2:'Quantico', sans-serif;
 $list-stepper:"Guide", "Questions", "Result";
@@ -33,11 +33,7 @@ $list-stepper:"Guide", "Questions", "Result";
   }
 
 body{
-    background-image: url(../img/Meteor\ \(1\).svg);
-    background-repeat: no-repeat;  
-    background-position: 0% 0%;
-    background-size: 100vw 100vh;
-    
+    background-color: $color1;    
 }
 
 #question{
@@ -57,6 +53,8 @@ body{
     h4,label{
         font-family: $font1;
         color: $color3;
+        padding: 20px;
+        width: 100%;
     }
     .answer{
       background-color: $color2;
@@ -92,20 +90,20 @@ body{
   justify-content: end;
 }
 .next:hover{
-  background-color: #ff631a;
-  color: #FFFFFF;
+  background-color: $color3;
+  color: $color2;
 }
   
 button{
   border: 0;
   padding: 4px;
   font-family: "Chakra Petch", sans-serif;
-  color: #ff631a;
+  color: $color3;
   text-decoration: none;
   position: relative;
   cursor: pointer;
 }
-button:after, button:before{
+.button:after, .button:before{
 content: '';
     position: absolute;
     width: 0;
@@ -113,13 +111,13 @@ content: '';
     transition: all 0.4s, opacity 0.1s 0.4s;
     opacity: 0;
 }
-button:after{
+.button:after{
     bottom: 0;
     right: 0;
     border-bottom: 3px solid $color3;
     border-right: 3px solid $color3;
 }
-button:before{
+.button:before{
     top: 0;
     left: 0;
     border-left:3px solid $color3;
@@ -127,7 +125,7 @@ button:before{
 
 }
 
-button:hover:before, button:hover:after{
+.button:hover:before, .button:hover:after{
     width: 100%;
     height: 100%;
     transition: 0.4s, opacity 0.1s;
@@ -141,6 +139,7 @@ button:hover:before, button:hover:after{
   max-width: 70%;
   overflow-y: scroll;
   height: 600px;
+  padding: 30px
 }
 
 #guide{
@@ -165,7 +164,6 @@ max-width: 80%;
 }
 .quiz-questions {
     @include div-design();
-    background-color: $color4;
     .contdown{
       display: flex;
       justify-content: space-between;
@@ -242,31 +240,25 @@ max-width: 80%;
 
  //! --------------------------->RESULT STYLING<-------------------------------
   .answer.sucess {
-    background-color: #5bbc7f !important;
+    background-color: $true !important;
     p{
       color: $color2 !important;
       }
 }
 .answer.wrong{
-  background-color: #f04e4e !important;
+  background-color: $false !important;
   p{
     
     color: $color2 !important;
   }
 }
-  .false{
-    background-color: $false !important;
-    p{
-      color: $color2 !important;
-    }
-  }
-  
+
   .question{
     display: flex;
-    padding: 1%;
+    padding: 0% 2%;
     justify-content: space-between;
-    background-color: $color2;
-    border-radius: 10px;
+    background-color: $color1;
+    border-radius: 41px;
       .noAnswer{
           font-family: $font2;
           font-size: larger;
@@ -298,3 +290,25 @@ max-width: 80%;
   background-color:#bfb !important;
   border-color: #4c4 !important;
 }
+//! ---------------------------> MEDIA QUERY <-------------------------------
+// $media-desktop: "only screen and (max-width : 1024px)";
+// $media-tablet: "only screen and (max-width : 768px)";
+// $media-mobile: "only screen and (max-width : 600px)";
+// $media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+// @media #{$media-desktop} {
+//   background: red;
+// }
+
+// @media #{$media-tablet} {
+//   background: red;
+// }
+
+// @media #{$media-mobile} {
+  // background: red;
+// }
+
+// @media #{$media-mobile-sm} {
+  // background: red;
+// }

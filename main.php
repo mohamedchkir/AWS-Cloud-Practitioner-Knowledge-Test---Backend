@@ -21,7 +21,7 @@
       <div class="button-container">
         <div class="inputBox">
           <form name="myForm" action="index1.php" onsubmit="return validateForm()">
-            <input id="username" type="text" required="required" name="fname" />
+            <input id="username" type="text" name="fname" />
             <span>Your Username</span>
         </div>
         <div class="button_start">

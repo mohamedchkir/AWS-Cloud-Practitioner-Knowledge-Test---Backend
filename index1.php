@@ -60,8 +60,9 @@
             <label for="answer-3"></label>
           </div>
           <div class="answer">
-            <input type="radio" id="answer-4" name="questions" />
-            <label for="answer-4"></label>
+            <label for="answer-4">
+              <input type="radio" id="answer-4" name="questions" />
+            </label>
           </div>
         </div>
       </div>
