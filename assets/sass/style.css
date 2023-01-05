@@ -138,4 +138,10 @@ h1 span:last-child {
   80%, 100% {
     transform: scale(1) rotateZ(-3deg);
   }
+}
+@media only screen and (max-width : 600px) {
+  h1 {
+    font-size: 5em;
+    margin-top: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */

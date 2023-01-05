@@ -169,6 +169,7 @@ max-width: 80%;
       color:$color1;
       font-family: $font1;
       font-size: x-large;
+      height: 90px;
 }
     div{
         .seconds{
@@ -236,7 +237,6 @@ max-width: 80%;
   .none{
     display: none;
   }
-
  //! --------------------------->RESULT STYLING<-------------------------------
   .answer.sucess {
     background-color: $true !important;
@@ -251,7 +251,6 @@ max-width: 80%;
     color: $color2 !important;
   }
 }
-
   .question{
     display: flex;
     padding: 0% 2%;
@@ -266,7 +265,7 @@ max-width: 80%;
       .noAnswers{
         font-family: "Quantico", sans-serif;
         font-size: larger;
-        color: #000000;
+        color: $color2;
         font-variant-caps: all-small-caps;
       }
   }
@@ -292,8 +291,8 @@ max-width: 80%;
 //! ---------------------------> MEDIA QUERY <-------------------------------
 // $media-desktop: "only screen and (max-width : 1024px)";
 // $media-tablet: "only screen and (max-width : 768px)";
-// $media-mobile: "only screen and (max-width : 600px)";
-// $media-mobile-sm: "only screen and (max-width : 480px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
 
 
 // @media #{$media-desktop} {
@@ -304,9 +303,17 @@ max-width: 80%;
 //   background: red;
 // }
 
-// @media #{$media-mobile} {
-  // background: red;
-// }
+@media #{$media-mobile} {
+  .result{
+    @include div-design();
+    background-color: $color4;
+    max-width: 70%;
+    overflow-y: scroll;
+    height: auto;
+    padding: 30px
+  }
+ 
+}
 
 // @media #{$media-mobile-sm} {
   // background: red;

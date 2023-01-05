@@ -152,6 +152,7 @@ button {
   color: #000000;
   font-family: "Chakra Petch", sans-serif;
   font-size: x-large;
+  height: 90px;
 }
 .quiz-questions div .seconds {
   color: #ff631a;
@@ -275,7 +276,7 @@ button {
 .question .noAnswers {
   font-family: "Quantico", sans-serif;
   font-size: larger;
-  color: #000000;
+  color: #FFFFFF;
   font-variant-caps: all-small-caps;
 }
 
@@ -299,4 +300,19 @@ button {
 .answer input[type=radio]:checked + label {
   background-color: #bfb !important;
   border-color: #4c4 !important;
+}
+
+@media only screen and (max-width : 600px) {
+  .result {
+    background-color: rgba(255, 255, 255, 0.9411764706);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 70%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.9411764706);
+    max-width: 70%;
+    overflow-y: scroll;
+    height: auto;
+    padding: 30px;
+  }
 }/*# sourceMappingURL=style1.css.map */

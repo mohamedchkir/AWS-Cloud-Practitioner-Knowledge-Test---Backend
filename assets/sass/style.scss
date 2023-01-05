@@ -140,3 +140,29 @@ h1 {
     transform: scale(1) rotateZ(-3deg);
     }
 }
+
+//! ---------------------------> MEDIA QUERY <-------------------------------
+// $media-desktop: "only screen and (max-width : 1024px)";
+// $media-tablet: "only screen and (max-width : 768px)";
+$media-mobile: "only screen and (max-width : 600px)";
+$media-mobile-sm: "only screen and (max-width : 480px)";
+
+
+// @media #{$media-desktop} {
+//   background: red;
+// }
+
+// @media #{$media-tablet} {
+//   background: red;
+// }
+
+@media #{$media-mobile} {
+    h1 {
+        font-size: 5em;
+        margin-top: 40%;
+        }
+}
+
+// @media #{$media-mobile-sm} {
+  // background: red;
+// }
