@@ -18,7 +18,6 @@ const r = document.querySelector(':root');
 const BTN_PLAY = document.querySelector('#btn-play');
 
 //! submit
-
 next_btn.addEventListener("click", function (e) {
   check()
   clearInterval(interval);
@@ -41,6 +40,7 @@ function timer() {
   }
 }
 
+//! AFFICHAGE DES QUESTIONS 
 function afficher_question(question) {
   console.log(index);
   if (index >= 10) {
@@ -49,7 +49,7 @@ function afficher_question(question) {
     endQuiz();
     return;
   } else {
-    document.querySelector('#quest-num').textContent = (index + 1) + ' / 10';
+    document.querySelector('#quest-num').textContent = (index + 1) + ' / 10';                  //* nombre of questions
   }
   timer();
   console.log(question)
@@ -80,8 +80,7 @@ function afficher_question(question) {
   index++;
 }
 
-//! a condition switch div class name in none 
-
+//! A CONDITION SWITCH DIV CLASS NAME IN NONE 
 BTN_PLAY.onclick = () => {
   r.style.setProperty('--width-stepper', '50%');
   document.querySelector('.step-2').classList.add('active');
@@ -108,7 +107,7 @@ function check() {
   console.log(list);
 }
 
-let score = 0;
+//! CHECK ANSWERS IS TRUE OR FALSE FOR RESULT
 function checkAnswers() {
   let result = document.querySelector('.result');
   result.innerHTML = '';
@@ -156,14 +155,14 @@ function endQuiz() {
   checkAnswers();
 }
 
-//! USERNAME 
+//! USERNAME SESSION
 function getname() {
   sessionStorage.setItem("user", document.getElementById("username").value);
 }
 let name = sessionStorage.getItem("user");
 document.getElementById("username").innerText = `Hello ` + name;
 
-//!  redirection to other page 
+//! CHECK INPUT IS EMPTY 
 function validateForm() {
   let x = document.forms["myForm"]["fname"].value;
   if (x == "") {
